@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 import os
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 @app.route("/")
 def inicio():
     return "SS IA GAMES UNIVERSAL está online!"
