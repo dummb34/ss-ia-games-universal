@@ -32,9 +32,8 @@ def perguntar():
             input=pergunta
         )
 
-        return jsonify({"resposta": resposta.output_text})
-
     except Exception as erro:
+        app.logger.exception("Erro ao consultar a OpenAI")
         return jsonify({"erro": "Não foi possível responder agora."}), 500
 
 if __name__ == "__main__":
